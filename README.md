@@ -31,12 +31,12 @@ Then add the dependency to your module's build.gradle:
 
 /app/build.gradle
 ```groovy
-compile 'com.github.deano2390:MaterialShowcaseView:1.1.0'
+compile 'com.github.colinrtwhite:MaterialShowcaseView:1.1.1'
 ```
 
 NOTE: Some people have mentioned that they needed to add the @aar suffix to get it to resolve from JitPack:
 ```groovy
-compile 'com.github.deano2390:MaterialShowcaseView:1.1.0@aar'
+compile 'com.github.colinrtwhite:MaterialShowcaseView:1.1.1@aar'
 ```
 
 # How to use
@@ -113,5 +113,5 @@ Publishing libraries to Maven is a chore that takes time and effort. Jitpack.io 
 [1]: https://github.com/amlcurran/ShowcaseView
 [2]: http://i.imgur.com/rFHENgz.gif
 [3]: https://code.google.com/p/android-flowtextview/
-[4]: https://img.shields.io/github/release/deano2390/MaterialShowcaseView.svg?label=JitPack
-[5]: https://jitpack.io/#deano2390/MaterialShowcaseView
+[4]: https://img.shields.io/github/release/colinrtwhite/MaterialShowcaseView.svg?label=JitPack
+[5]: https://jitpack.io/#colinrtwhite/MaterialShowcaseView
