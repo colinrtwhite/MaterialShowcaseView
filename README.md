@@ -13,8 +13,6 @@ Since Google introduced the Material design philosophy I have seen quite a few a
 # Gradle
 --------
 
-[![jitpack][4]][5]
-
 Add the jitpack repo to your your project's build.gradle at the end of repositories [Why?](#why-jitpack)
 
 /build.gradle
@@ -113,5 +111,3 @@ Publishing libraries to Maven is a chore that takes time and effort. Jitpack.io 
 [1]: https://github.com/amlcurran/ShowcaseView
 [2]: http://i.imgur.com/rFHENgz.gif
 [3]: https://code.google.com/p/android-flowtextview/
-[4]: https://img.shields.io/github/release/colinrtwhite/MaterialShowcaseView.svg?label=JitPack
-[5]: https://jitpack.io/#colinrtwhite/MaterialShowcaseView
