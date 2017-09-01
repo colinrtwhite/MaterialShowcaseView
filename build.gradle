@@ -2,10 +2,9 @@
 
 buildscript {
     repositories {
+        google()
         jcenter()
-        maven {
-            url 'https://repos.zeroturnaround.com/nexus/content/repositories/zt-public-releases'
-        }
+        maven { url 'https://repos.zeroturnaround.com/nexus/content/repositories/zt-public-releases' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
@@ -17,6 +16,7 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
         jcenter()
     }
 }
