@@ -71,7 +71,6 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
     private long mFadeDurationInMillis = ShowcaseConfig.DEFAULT_FADE_TIME;
     private Handler mHandler;
     private long mDelayInMillis = ShowcaseConfig.DEFAULT_DELAY;
-    private int mBottomMargin = 0;
     private boolean mSingleUse = false; // should display only once
     private PrefsManager mPrefsManager; // used to store state doe single use mode
     List<IShowcaseListener> mListeners; // external listeners who want to observe when we show and dismiss
@@ -120,9 +119,9 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
 
         View contentView = LayoutInflater.from(getContext()).inflate(R.layout.showcase_content, this, true);
         mContentBox = contentView.findViewById(R.id.content_box);
-        mTitleTextView = (TextView) contentView.findViewById(R.id.tv_title);
-        mContentTextView = (TextView) contentView.findViewById(R.id.tv_content);
-        mDismissButton = (TextView) contentView.findViewById(R.id.tv_dismiss);
+        mTitleTextView = contentView.findViewById(R.id.tv_title);
+        mContentTextView = contentView.findViewById(R.id.tv_content);
+        mDismissButton = contentView.findViewById(R.id.tv_dismiss);
         mDismissButton.setOnClickListener(this);
     }
 
@@ -267,16 +266,13 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
         updateDismissButton();
 
         if (mTarget != null) {
-
-            /**
-             * If we're on lollipop then make sure we don't draw over the nav bar
-             */
+            // If we're on Lollipop or above then make sure we don't draw over the nav bar.
             if (!mRenderOverNav && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                mBottomMargin = getSoftButtonsBarSizePort((Activity) getContext());
+                int bottomMargin = getSoftButtonsBarSizePort((Activity) getContext());
                 FrameLayout.LayoutParams contentLP = (LayoutParams) getLayoutParams();
 
-                if (contentLP != null && contentLP.bottomMargin != mBottomMargin)
-                    contentLP.bottomMargin = mBottomMargin;
+                if (contentLP != null && contentLP.bottomMargin != bottomMargin)
+                    contentLP.bottomMargin = bottomMargin;
             }
 
             // apply the target position
@@ -509,7 +505,7 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
 
     /**
      * BUILDER CLASS
-     * Gives us a builder utility class with a fluent API for eaily configuring showcase views
+     * Gives us a builder utility class with a fluent API for easily configuring showcase views
      */
     public static class Builder {
         private static final int CIRCLE_SHAPE = 0;
@@ -750,7 +746,12 @@ public class MaterialShowcaseView extends FrameLayout implements View.OnTouchLis
         mCanvas = null;
         mHandler = null;
 
-        getViewTreeObserver().removeGlobalOnLayoutListener(mLayoutListener);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            getViewTreeObserver().removeOnGlobalLayoutListener(mLayoutListener);
+        } else {
+            //noinspection deprecation
+            getViewTreeObserver().removeGlobalOnLayoutListener(mLayoutListener);
+        }
         mLayoutListener = null;
 
         if (mPrefsManager != null)

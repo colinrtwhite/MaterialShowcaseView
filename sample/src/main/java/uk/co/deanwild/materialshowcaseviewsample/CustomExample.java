@@ -1,6 +1,7 @@
 package uk.co.deanwild.materialshowcaseviewsample;
 
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,10 +24,10 @@ public class CustomExample extends AppCompatActivity implements View.OnClickList
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_example);
-        mButtonShow = (Button) findViewById(R.id.btn_show);
+        mButtonShow = findViewById(R.id.btn_show);
         mButtonShow.setOnClickListener(this);
 
-        mButtonReset = (Button) findViewById(R.id.btn_reset);
+        mButtonReset = findViewById(R.id.btn_reset);
         mButtonReset.setOnClickListener(this);
 
         presentShowcaseView(1000); // one second delay
@@ -48,8 +49,8 @@ public class CustomExample extends AppCompatActivity implements View.OnClickList
                     .setShapePadding(96)
                     .setDismissText("GOT IT")
                     .setContentText("Example of how to setup a MaterialShowcaseView for menu items in action bar.")
-                    .setContentTextColor(getResources().getColor(R.color.green))
-                    .setMaskColour(getResources().getColor(R.color.purple))
+                    .setContentTextColor(ContextCompat.getColor(this, R.color.green))
+                    .setMaskColour(ContextCompat.getColor(this, R.color.purple))
                     .show();
         }
 
@@ -76,8 +77,8 @@ public class CustomExample extends AppCompatActivity implements View.OnClickList
                 .setTarget(mButtonShow)
                 .setContentText("This is some amazing feature you should know about")
                 .setDismissOnTouch(true)
-                .setContentTextColor(getResources().getColor(R.color.green))
-                .setMaskColour(getResources().getColor(R.color.purple))
+                .setContentTextColor(ContextCompat.getColor(this, R.color.green))
+                .setMaskColour(ContextCompat.getColor(this, R.color.purple))
                 .setDelay(withDelay) // optional but starting animations immediately in onCreate can make them choppy
                 .singleUse(SHOWCASE_ID) // provide a unique ID used to ensure it is only shown once
                 .show();

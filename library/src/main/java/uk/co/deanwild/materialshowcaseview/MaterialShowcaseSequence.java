@@ -71,12 +71,7 @@ public class MaterialShowcaseSequence implements IDetachedListener {
     }
 
     public boolean hasFired() {
-
-        if (mPrefsManager.getSequenceStatus() == PrefsManager.SEQUENCE_FINISHED) {
-            return true;
-        }
-
-        return false;
+        return mPrefsManager.getSequenceStatus() == PrefsManager.SEQUENCE_FINISHED;
     }
 
     public void start() {

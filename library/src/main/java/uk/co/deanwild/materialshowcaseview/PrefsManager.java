@@ -6,8 +6,8 @@ import android.content.SharedPreferences;
 
 public class PrefsManager {
 
-    public static int SEQUENCE_NEVER_STARTED = 0;
-    public static int SEQUENCE_FINISHED = -1;
+    public static final int SEQUENCE_NEVER_STARTED = 0;
+    public static final int SEQUENCE_FINISHED = -1;
 
 
     private static final String PREFS_NAME = "material_showcaseview_prefs";

@@ -79,7 +79,6 @@ public class CircularRevealAnimationFactory implements IAnimationFactory {
 
             }
         });
-
         animator.start();
     }
 

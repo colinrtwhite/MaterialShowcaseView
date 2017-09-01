@@ -21,10 +21,10 @@ public class SimpleSingleExample extends AppCompatActivity implements View.OnCli
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_single_example);
-        mButtonShow = (Button) findViewById(R.id.btn_show);
+        mButtonShow = findViewById(R.id.btn_show);
         mButtonShow.setOnClickListener(this);
 
-        mButtonReset = (Button) findViewById(R.id.btn_reset);
+        mButtonReset = findViewById(R.id.btn_reset);
         mButtonReset.setOnClickListener(this);
 
         presentShowcaseView(1000); // one second delay

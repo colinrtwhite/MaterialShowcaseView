@@ -12,12 +12,11 @@ public interface IAnimationFactory {
 
     void animateTargetToPoint(MaterialShowcaseView showcaseView, Point point);
 
-    public interface AnimationStartListener {
+    interface AnimationStartListener {
         void onAnimationStart();
     }
 
-    public interface AnimationEndListener {
+    interface AnimationEndListener {
         void onAnimationEnd();
     }
 }
-
