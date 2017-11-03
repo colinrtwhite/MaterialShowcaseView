@@ -29,12 +29,12 @@ Then add the dependency to your module's build.gradle:
 
 /app/build.gradle
 ```groovy
-compile 'com.github.colinrtwhite:MaterialShowcaseView:1.1.1'
+compile 'com.github.colinrtwhite:MaterialShowcaseView:1.2.0'
 ```
 
 NOTE: Some people have mentioned that they needed to add the @aar suffix to get it to resolve from JitPack:
 ```groovy
-compile 'com.github.colinrtwhite:MaterialShowcaseView:1.1.1@aar'
+compile 'com.github.colinrtwhite:MaterialShowcaseView:1.2.0@aar'
 ```
 
 # How to use
@@ -51,10 +51,10 @@ This is the basic usage of a single showcase view, you should check out the samp
 		.setDelay(withDelay) // optional but starting animations immediately in onCreate can make them choppy
 		.singleUse(SHOWCASE_ID) // provide a unique ID used to ensure it is only shown once
 		.show();
-                
-                
-                
-                
+
+
+
+
 	// sequence example            
 	ShowcaseConfig config = new ShowcaseConfig();
 	config.setDelay(500); // half second between each showcase view
@@ -73,7 +73,7 @@ This is the basic usage of a single showcase view, you should check out the samp
 		"This is button three", "GOT IT");
 
 	sequence.start();
-                
+
 ```
 
 # Why Jitpack
@@ -83,7 +83,7 @@ Publishing libraries to Maven is a chore that takes time and effort. Jitpack.io 
 # Apps using MaterialShowcaseView
 ---------------------------------
 
-  * [Say It! - English Learning](https://play.google.com/store/apps/details?id=com.cesarsk.say_it) : An Android App aimed to improve your English Pronunciation. 
+  * [Say It! - English Learning](https://play.google.com/store/apps/details?id=com.cesarsk.say_it) : An Android App aimed to improve your English Pronunciation.
     * [Github Page](https://github.com/cesarsk/say_it)
 
 
